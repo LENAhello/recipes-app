@@ -21,7 +21,7 @@ const RecipeCard = ({recipe}: RecipeCardProps) => {
     } = recipe;
 
     return (
-        <div className="border border-emerald-800 rounded-2xl p-2">
+        <div className="border border-emerald-700 rounded-2xl p-2">
           {/* Recipe image */}
           <div className="relative w-full h-68 rounded-xl overflow-hidden">
             <img

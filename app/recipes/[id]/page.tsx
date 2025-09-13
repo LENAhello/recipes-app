@@ -1,16 +1,17 @@
 import { notFound } from "next/navigation";
 import React from "react";
 import { Recipe } from "../page"; // reuse your type (or move it to types.ts)
-import Image from "next/image";
 
-interface RecipePageProps {
-  params: { id: string };
-}
+const page = async ({ params }: {params: Promise<{ id: string }>}) => {
 
-const page = async ({ params }: RecipePageProps) => {
+    const { id } = await params;
+    const response = await fetch(`https://dummyjson.com/recipes/${id}`);
 
-    const response = await fetch(`https://dummyjson.com/recipes/${params.id}`);
+    if (!response.ok) return notFound();
+      
     const recipe: Recipe = await response.json();
+
+    if (!recipe || !recipe.id) return notFound();
 
     const {
         name,
@@ -30,8 +31,13 @@ const page = async ({ params }: RecipePageProps) => {
             <h1 className="text-3xl font-bold mb-4">{name}</h1>
 
             <div className="relative rounded-lg h-86 overflow-hidden mb-6">
-                <img src={image} alt={name} className="object-contain w-full" />
+                <img
+                    src={image}
+                    alt={name}
+                    className="w-full h-full object-cover object-center"
+                />
             </div>
+
 
             <p className="text-gray-600 mb-2">
                 Cuisine: {cuisine} • Difficulty: {difficulty}
