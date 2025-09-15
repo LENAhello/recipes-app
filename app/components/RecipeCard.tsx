@@ -34,7 +34,7 @@ const RecipeCard = ({recipe}: RecipeCardProps) => {
           {/* Recipe info */}
           <div className="mt-4 flex flex-col gap-2">
             <Link href={`/recipes/${id}`}>
-                <h2 className="text-xl font-semibold">{name}</h2>
+                <h2 className="text-xl">{name}</h2>
             </Link>
             <p className="text-sm text-gray-500">{cuisine}</p>
     

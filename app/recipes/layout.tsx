@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
     return (
     
-        <main className="max-w-6xl mx-auto p-6">
+        <main className="max-w-6xl mx-auto p-6 font-alpino font-bold">
             <Navbar/>
             {children}
         </main>

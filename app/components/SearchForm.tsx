@@ -17,7 +17,7 @@ const SearchForm = ({ query } : {query?: string}) => {
                 <div className="flex gap-2">
                     {/* If query has a value, show a reset button */}
                     {/* {query && <SearchFormReset/>} */}
-                    <button type="submit" className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500 hover:bg-emerald-600 transition text-white shadow cursor">
+                    <button type="submit" className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-500 hover:bg-emerald-600 transition text-white shadow cursor-pointer">
                         <Search className="size-5"/>
                     </button>
                 </div>

@@ -1,6 +1,23 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
+const alpino = localFont({
+  src: [
+    {
+      path: "../public/fonts/Alpino-Black.woff",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Alpino-Light.woff",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-alpino",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={alpino.variable}
       >
         {children}
       </body>

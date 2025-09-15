@@ -7,7 +7,7 @@ const Navbar = () => {
             <div className="max-w-6xl mx-auto px-4">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo / Brand */}
-                    <Link href="/" className="text-xl font-bold text-emerald-600">
+                    <Link href="/" className="text-xl text-emerald-600 font-tanker">
                         RecipeApp
                     </Link>
             
@@ -21,7 +21,7 @@ const Navbar = () => {
                         </Link>
             
                         <Link
-                            href="/my-recipes"
+                            href="/recipes/my-recipes"
                             className="text-gray-700 hover:text-emerald-600 transition"
                         >
                             My Recipes
